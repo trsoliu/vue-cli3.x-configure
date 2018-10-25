@@ -1,0 +1,12 @@
+//-----------------------------------清除浮动-----------------------------------------    
+//引用例子：@include clearfix();    
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

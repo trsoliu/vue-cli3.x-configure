@@ -1,0 +1,71 @@
+@mixin _c_header {
+    padding: 10px 0;
+    color: #999;
+    .top {
+        //          border-bottom: 1px solid #eee;
+        height: 38px;
+        overflow: hidden;
+        .iconfont {
+            float: left;
+        }
+    }
+    .breadcrumb {
+        float: left;
+        margin-left: 3px;
+        margin-top: 5px;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 14px;
+    }
+    .queryData {
+        width: 100%;
+        border-radius: 4px;
+        padding: 10px 0 10px 45px;
+        background: #fff;
+        dt {
+            margin-left: 20px;
+            display: inline-block;
+            button {
+                margin-right: 7px;
+                vertical-align: initial;
+            }
+        }
+        dd {
+            margin-right: 10px;
+            display: inline-block;
+            span {
+                opacity: 0.9;
+                font-size: 14px;
+                color: #545E75;
+                letter-spacing: 0;
+                vertical-align: middle;
+            }
+            b {
+                opacity: 0.9;
+                font-size: 14px;
+                color: #545E75;
+                letter-spacing: 0;
+                vertical-align: middle;
+            }
+            .ivu-input-wrapper {
+                width: 150px;
+            }
+//          select {
+//              display: inline-block;
+//              width: 150px;
+//              height: 32px;
+//              line-height: 1.5;
+//              padding: 4px 7px;
+//              font-size: 12px;
+//              border: 1px solid #dddee1;
+//              border-radius: 4px;
+//              color: #495060;
+//              background-color: #fff;
+//              background-image: none;
+//              position: relative;
+//              cursor: text;
+//              transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out
+//          }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@mixin _c_table {
+    .table {
+        min-height: 670px;
+        background: #fff;
+        padding: 25px 45px;
+        border-radius: 4px;
+        .ivu-table-wrapper {
+            z-index: 0;
+        }
+    }
+    .ivu-page {
+        position: relative;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    
+}

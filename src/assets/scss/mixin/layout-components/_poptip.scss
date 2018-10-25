@@ -1,0 +1,31 @@
+/*全局密码大小写提示浮框*/
+    
+    .poptip_open {
+        .ivu-poptip-popper {
+            display: block;
+            .ivu-poptip-arrow:after {
+                border-bottom-color: rgba(70, 76, 91, .9)!important;
+            }
+            .ivu-poptip-inner {
+                background-color: rgba(70, 76, 91, .9);
+                .ivu-poptip-body-content-inner {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .poptip_close {
+        .ivu-poptip-popper {
+            display: none!important;
+            .ivu-poptip-arrow:after {
+                border-bottom-color: rgba(70, 76, 91, .9)!important;
+            }
+            .ivu-poptip-inner {
+                background-color: rgba(70, 76, 91, .9);
+                .ivu-poptip-body-content-inner {
+                    color: #fff;
+                }
+            }
+        }
+    }

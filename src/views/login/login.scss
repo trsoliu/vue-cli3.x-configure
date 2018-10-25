@@ -1,0 +1,155 @@
+.login {
+    width: 100%;
+    height: 100%;
+    .bg {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: relative;
+//      background: $bg;
+        background: #fff;
+        .content {
+            width: 800px;
+            height: 440px + 80px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+            background-color: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: auto;
+            box-shadow: 0px 12px 30px 0px rgba(60, 92, 142, 0.26);
+            /*width: 340px;
+                height: 500px;*/
+            .l {
+                width: 540px;
+                float: left;
+                height: 440px + 80px;
+                position: relative;
+                @include clearfix();
+                >i {
+                    display: block;
+                    margin-top: 40px;
+                    color: #3674DA;
+                    font-size: 60px;
+                    user-select: none;
+                }
+                h1 {
+                    color: #555;
+                    font-size: 20px;
+                    user-select: none;
+                    /*padding: 16px;*/
+                }
+                .text {
+                    padding: 30px 100px 0 100px;
+                    /*height: 260px;*/
+                    position: relative;
+                    /*border: 1px solid #ececec;
+                        border-top: 6px solid #2d8cf0;*/
+                    .user {
+                        position: relative;
+                        height: 32px;
+                        margin-bottom: 15px;
+                        text-align: left;
+                        i {
+                            position: absolute;
+                            left: 15px;
+                            z-index: 1;
+                            color: #979797;
+                            padding: 4px 0;
+                        }
+                        .input {
+                            //                          position: absolute;
+                            //                          left: 0;
+                            width: 340px;
+                            display: block;
+                            >input {
+                                padding-left: 40px;
+                            }
+                        }
+                        img {
+                            height: 32px;
+                            border-radius: 4px;
+                        }
+                        .verificationCode {
+                            font-size: 12px;
+                            margin-left: 40px;
+                            padding: 6px 10px;
+                            border: 1px solid #2d8cf0;
+                            border-radius: 4px;
+                            display: inline-block;
+                            vertical-align: top;
+                            cursor: pointer;
+                        }
+                        &.second {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    .hintStatus {
+                        height: 18px;
+                        line-height: 18px;
+                        color: red;
+                        margin-top: 0px;
+                    }
+                    .button {
+                        width: 50%;
+                        /*position: absolute;
+                            bottom: 40px;
+                            left: 0;
+                            right: 0;*/
+                        margin: 12px auto 0;
+                    }
+                    .ivu-checkbox-group {
+                        text-align: left;
+                        margin-top: 10px;
+                        .ivu-checkbox-wrapper {
+                            margin-right: 0px;
+                            user-select: none;
+                        }
+                    }
+                }
+            }
+            .r {
+                width: 260px;
+                float: left;
+                user-select: none;
+                /*display:inline-block;*/
+            }
+        }
+        .canvas {
+            z-index: 1!important;
+        }
+        /* loading样式 */
+        .demo-spin-icon-load {
+            animation: ani-demo-spin 1s linear infinite;
+            font-size: 40px!important;
+        }
+        @keyframes ani-demo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .ivu-spin-fix {
+            background-color: rgba(55, 55, 55, 0);
+        }
+        .load-text {
+            font-size: 12px;
+        }
+        /* loading样式 end */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

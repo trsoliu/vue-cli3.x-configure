@@ -1,0 +1,10 @@
+
+
+//全局公共scss文件，改scss文件所包含内容均为function和引用继承样式
+
+@import "./mixin/_tool.scss";
+@import "./variables/_color.scss";
+@import "./mixin/layout-components/_c_header.scss";
+@import "./mixin/layout-components/_c_table.scss";
+@import "./mixin/layout-components/_poptip.scss";
+@import "./mixin/compatibility/_audio.scss";
