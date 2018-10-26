@@ -7,5 +7,11 @@ module.exports = {
         polyfills: ["es6.promise", "es6.symbol"]
       }
     ]
-  ]
+  ],
+  "plugins": [
+		["import", {
+			"libraryName": "iview",
+			"libraryDirectory": "src/components"
+		}]
+	]
 };
