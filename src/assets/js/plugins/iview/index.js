@@ -1,6 +1,6 @@
 import Vue from "vue";
 import "iview/dist/styles/iview.css";
-
+//获取组件
 import {
   //	Affix,
   //	Alert,
