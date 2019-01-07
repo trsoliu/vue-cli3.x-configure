@@ -34,10 +34,10 @@ module.exports = {
 		 * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
 		 * 而且预渲染时生成的prefetch标签是modern版本的，低版本浏览器是不需要的
 		 */
-		//		config.plugins.delete('prefetch');
-		//		if(process.env.NODE_ENV === 'production') { // 为生产环境修改配置...process.env.NODE_ENV !== 'development'
-		//		} else {// 为开发环境修改配置...
-		//		}
+		// config.plugins.delete('prefetch');
+		// if(process.env.NODE_ENV === 'production') { // 为生产环境修改配置...process.env.NODE_ENV !== 'development'
+		// } else { // 为开发环境修改配置...
+		// }
 	},
 	//调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
 	configureWebpack: config => {
@@ -50,7 +50,7 @@ module.exports = {
 				threshold: 8192,
 				minRatio: 0.8,
 			}),
-			//	Webpack包文件分析器(https://github.com/webpack-contrib/webpack-bundle-analyzer)
+			// Webpack包文件分析器(https://github.com/webpack-contrib/webpack-bundle-analyzer)
 			new BundleAnalyzerPlugin(),
 		];
 		//开发环境
