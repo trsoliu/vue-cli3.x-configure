@@ -1,5 +1,5 @@
 /**
- * *@2018-10-08
+ * *@2019-01-09
  * *@author trsoliu 
  * *@describe vue-cli 3.x配置文件
  */
