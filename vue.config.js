@@ -6,6 +6,9 @@
 const path = require('path');
 const vConsolePlugin = require('vconsole-webpack-plugin'); // 引入 移动端模拟开发者工具 插件 （另：https://github.com/liriliri/eruda）
 const CompressionPlugin = require('compression-webpack-plugin'); //Gzip
+const zopfli = require("@gfx/zopfli");//zopfli压缩
+const BrotliPlugin = require("brotli-webpack-plugin");//brotli压缩
+const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //Webpack包文件分析器
 const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font scss资源路径 不同环境切换控制
 
@@ -43,13 +46,27 @@ module.exports = {
 	configureWebpack: config => {
 		//生产and测试环境
 		let pluginsPro = [
-			new CompressionPlugin({ //文件开启Gzip，也可以通过服务端(如：nginx)(https://github.com/webpack-contrib/compression-webpack-plugin)
-				filename: '[path].gz[query]',
-				algorithm: 'gzip',
-				test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$', ),
-				threshold: 8192,
+// 			new CompressionPlugin({ //文件开启Gzip，也可以通过服务端(如：nginx)(https://github.com/webpack-contrib/compression-webpack-plugin)
+// 				filename: '[path].gz[query]',
+// 				algorithm: 'gzip',
+// 				test: productionGzipExtensions,
+// 				threshold: 8192,
+// 				minRatio: 0.8,
+// 			}),
+			new CompressionPlugin({
+				algorithm(input, compressionOptions, callback) {
+					return zopfli.gzip(input, compressionOptions, callback);
+				},
+				compressionOptions: {
+					numiterations: 15
+				},
 				minRatio: 0.8,
+				test: productionGzipExtensions
 			}),
+			new BrotliPlugin({
+				test: productionGzipExtensions,
+				minRatio: 0.8
+			})
 			// Webpack包文件分析器(https://github.com/webpack-contrib/webpack-bundle-analyzer)
 			new BundleAnalyzerPlugin(),
 		];
@@ -62,6 +79,13 @@ module.exports = {
 			}),
 		];
 		if(process.env.NODE_ENV === 'production') { // 为生产环境修改配置...process.env.NODE_ENV !== 'development'
+//			config.entry.app = ['babel-polyfill', './src/main.js'];
+//			config.externals = {
+//				'vue': 'Vue',
+//				'vue-router': 'VueRouter',
+//				'iview': 'iview',
+//				'vuex': 'vuex',
+//			}
 			config.plugins = [...config.plugins, ...pluginsPro];
 		} else {
 			// 为开发环境修改配置...
