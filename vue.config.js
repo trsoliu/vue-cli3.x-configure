@@ -14,7 +14,8 @@ const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font
 
 module.exports = {
 	//基本路径
-	baseUrl: './',
+// 	baseUrl: './',
+	publicPath:'./',//vue-cli3.3新版本
 	//输出文件目录
 	outputDir: 'vue-cli3.x-configure',
 	// eslint-loader 是否在保存的时候检查
